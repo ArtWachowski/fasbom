@@ -1,0 +1,62 @@
+{
+  "analysis_date": 1517491696.332023,
+  "plugin_version": "0.3",
+  "result": {
+    "OpenSSL": {
+      "matches": true,
+      "meta": {
+        "description": "SSL library",
+        "open_source": true,
+        "software_name": "OpenSSL",
+        "version": [
+          "",
+          "1.0.1a"
+        ],
+        "website": "https://www.openssl.org"
+      },
+      "rule": "OpenSSL",
+      "strings": [
+        [
+          13696143,
+          "$a",
+          "T3BlblNzbA=="
+        ],
+        [
+          14147446,
+          "$a",
+          "T3BlblNTTCAwLjkuOA=="
+        ]
+      ]
+    },
+    "VxWorks": {
+      "matches": true,
+      "meta": {
+        "description": "Operating system for embedded devices",
+        "open_source": false,
+        "software_name": "VxWorks",
+        "version": [
+          "6.5"
+        ],
+        "website": "http://www.windriver.com/products/vxworks/"
+      },
+      "rule": "VxWorks",
+      "strings": [
+        [
+          12748719,
+          "$b",
+          "dnh3b3Jrcy02LjU="
+        ],
+        [
+          12748792,
+          "$b",
+          "VnhXb3JrcyA2LjU="
+        ]
+      ]
+    }
+  },
+  "summary": [
+    "OpenSSL ",
+    "OpenSSL 0.9.8",
+    "VxWorks 6.5"
+  ]
+}

@@ -1,0 +1,15 @@
+{% extends "analysis_plugins/general_information.html" %}
+
+{% block analysis_result_details %}
+<tr>
+    <td class="table-head-light"><b>Architecture</b></td>
+    <td class="table-head-light"><b>Means of Detection</b></td>
+</tr>
+    {# old results do not have the "architectures" key #}
+    {% for result, method in analysis_result.get("architectures", analysis_result).items() %}
+        <tr>
+            <td>{{ result }}</td>
+            <td>{{ method }}</td>
+        </tr>
+    {% endfor %}
+{% endblock %}

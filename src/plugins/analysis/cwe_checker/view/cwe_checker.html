@@ -1,0 +1,29 @@
+{% extends "analysis_plugins/general_information.html" %}
+
+{% block analysis_result_details %}
+
+<tr>
+    <td class="table-head-light"> Overview of CWE warnings </td>
+    <td>
+        <ul>
+            {% for cwe in analysis_result['summary'] | sort %}
+                <li><a href="https://cwe.mitre.org/data/definitions/{{ cwe | fix_cwe }}.html">{{ cwe }}</a></li>
+            {% endfor %}
+        </ul>
+    </td>
+</tr>
+
+{% for cwe in analysis_result['full']|sort %}
+    <tr>
+        <td>{{ cwe }} ({{ analysis_result['full'][cwe]['plugin_version'] }})</td>
+        <td>
+            <ul>
+                {% for message in analysis_result['full'][cwe]['warnings'] %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </td>
+    </tr>
+{% endfor %}
+
+{% endblock %}
